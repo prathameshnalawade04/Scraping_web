@@ -25,7 +25,7 @@
                 <th>URL</th>
                 <th>Updated</th>
                 <th>H1 Tags</th>
-            </tr>
+                <th>H2 Tags</th> </tr>
         </thead>
         <tbody>
             {% for item in data %}
@@ -34,9 +34,10 @@
                 <td><a href="{{ item.url }}" target="_blank">Link</a></td>
                 <td>{{ item.updated_at|date:"H:i:s" }}</td>
                 <td>{{ item.h1|truncatechars:50 }}</td>
+                <td>{{ item.h2|truncatechars:50 }}</td>
             </tr>
             {% empty %}
-            <tr><td colspan="4">No data scraped yet.</td></tr>
+            <tr><td colspan="5">No data scraped yet.</td></tr>
             {% endfor %}
         </tbody>
     </table>
